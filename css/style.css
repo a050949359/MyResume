@@ -200,6 +200,12 @@ ul {
 	left: 15%;
 }
 
+.note-6 {
+	position: absolute;
+	top :460px;
+	right: 15%;
+}
+
 @media screen and (max-device-width: 480px) {
 	/* 如果使用者之裝置寬度 <= 480px，將會再載入這裡的 CSS。 */
 	.note-box {
@@ -225,6 +231,10 @@ ul {
 	}
 	
 	.note-5 {
+		position: static;
+	}
+
+	.note-6 {
 		position: static;
 	}
 }
