@@ -20,7 +20,7 @@ ul {
 }
 
 .et-hero-tabs {
-	background: url("../img/pexels-negative-space-169573.jpg") center center;
+	background: url("/MyResume/img/pexels-negative-space-169573.jpg") center center;
 	background-size: auto 100vh;
 	
 	display: flex;
@@ -30,7 +30,7 @@ ul {
 }
 
 .et-slide {
-	background: url("../img/background.png") #e0e0e0;
+	background: url("/MyResume/img/background.png") #e0e0e0;
 	background-size: 300px 30px;
 	display: flex;
 	flex-direction: column;
