@@ -85,4 +85,9 @@ new StickyNavigation();
 $(".bigdata").click(function() {
 	console.log("bigdata");
 	window.open("http://132.145.126.24/job", '_blank');
-  });
+});
+
+$(".vcenter").click(function() {
+	console.log("bigdata");
+	window.open("http://168.138.214.202/", '_blank');
+});
