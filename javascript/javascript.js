@@ -81,3 +81,7 @@ class StickyNavigation {
 }
 
 new StickyNavigation();
+
+$(".bigdata").click(function() {
+	window.open("http://132.145.126.24/job", '_blank');
+  });
