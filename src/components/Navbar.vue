@@ -75,9 +75,9 @@ const logout = () => {
   width: 100%;
   height: 60px;
   min-width: 600px;
-  background: #074c62;
-  color: #fff;
-  border-bottom: 1px solid #1f2d3d;
+  background: url("../assets/bar-bg.png");
+  color: #BACBD9;
+  border-bottom: 1px solid #3B4E59;
   z-index: 1000;
 }
 

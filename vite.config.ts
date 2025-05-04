@@ -6,7 +6,6 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/MyResume/',
   plugins: [
     vue(),
     AutoImport({
