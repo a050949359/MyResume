@@ -15,7 +15,7 @@
             <span>首页</span>
           </el-menu-item>
         </router-link>
-        <template v-for="menu in menus" :key="menu.path">
+        <!-- <template v-for="menu in menus" :key="menu.path">
           <el-sub-menu v-if="menu.children" :index="menu.path">
             <template #title>
               <el-icon>
@@ -33,7 +33,7 @@
               </router-link>
             </el-menu-item-group>
           </el-sub-menu>
-        </template>
+        </template> -->
       </el-menu>
     </el-col>
   </el-row>

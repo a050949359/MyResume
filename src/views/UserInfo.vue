@@ -9,7 +9,7 @@
             class="avatar"
             alt=""
           />
-          <img v-else src="../assets/default.jpeg" class="avatar" alt="" />
+          <img v-else src="../assets/default.jpg" class="avatar" alt="" />
         </div>
       </el-col>
       <el-col :span="16">
