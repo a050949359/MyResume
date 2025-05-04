@@ -22,5 +22,9 @@ export default defineConfig({
     proxy: {
       "api":"https://192.168.0.105"
     }
+  },
+
+  build: {
+    outDir: 'dist'
   }
 })
