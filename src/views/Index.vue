@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <div class="title text-center">
-            <h1>ohya</h1>
+            <h1>ohya(當前進度 git actions 完成, 下一步增加個人project)</h1>
             <!-- Will put my linkedin profile URL if needed-->
             <h4><a href="https://github.com/a050949359">github</a></h4>
             <hr />
