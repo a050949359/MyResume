@@ -6,6 +6,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: './',
   plugins: [
     vue(),
     AutoImport({
@@ -23,8 +24,4 @@ export default defineConfig({
       "api":"https://192.168.0.105"
     }
   },
-
-  build: {
-    outDir: 'dist'
-  }
 })
