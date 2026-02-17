@@ -11,7 +11,7 @@ const routes: Array<RouteRecordRaw> = [
             {path: "fundList",component: () => import("../views/FundList.vue")},
             {path: "register",component: () => import("../views/Register.vue")},
             {path: "login",component: () => import("../views/Login.vue")},
-            
+            {path: "apitest", component: () => import("../views/ApiTest.vue")},
         ]
     },
     // {

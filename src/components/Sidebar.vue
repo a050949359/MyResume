@@ -66,6 +66,12 @@ const menus = ref([
     children: [{ path: "/", name: "測試" }],
     // children: [{ path: "fundList", name: "资金流水" }],
   },
+  {
+    icon: "Menu",
+    name: "API測試",
+    path: "apitest",
+    children: [{ path: "/MyResume/apitest", name: "API連線測試" }],
+  },
   // {
   //   icon: "InfoFilled",
   //   name: "個人資訊",
