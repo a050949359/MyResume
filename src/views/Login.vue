@@ -2,7 +2,7 @@
   <div class="login">
     <section class="form-container">
       <div class="manage-tip">
-        <span class="title">后台管理系统</span>
+        <span class="title">Login Page</span>
         <el-form
           :rules="rules"
           ref="ruleFormRef"
@@ -10,29 +10,29 @@
           class="loginForm"
           label-width="80px"
         >
-          <el-form-item label="邮箱" prop="email">
+          <el-form-item label="email" prop="email">
             <el-input
               v-model="loginUser.email"
-              placeholder="请输入邮箱"
+              placeholder="email"
             ></el-input>
           </el-form-item>
-          <el-form-item label="密码" prop="password">
+          <el-form-item label="password" prop="password">
             <el-input
               v-model="loginUser.password"
-              placeholder="请输入密码"
+              placeholder="password"
               type="password"
             ></el-input>
           </el-form-item>
 
           <el-form-item>
             <el-button @click="handleSubmit(ruleFormRef)" class="submit-btn"
-              >登录</el-button
+              >login</el-button
             >
           </el-form-item>
 
           <div class="tiparea">
             <p>
-              还没有账号? 现在<router-link to="/register">注册</router-link>
+              <router-link to="/register">regist</router-link> now
             </p>
           </div>
         </el-form>
@@ -55,8 +55,8 @@ const router = useRouter();
 const store = useAuthStore();
 
 const loginUser = ref<registerType>({
-  email: "27732357@qq.com",
-  password: "321321",
+  email: "test@example.com",
+  password: "12345678",
 });
 
 const rules = reactive<registerRulesType>({
@@ -64,13 +64,13 @@ const rules = reactive<registerRulesType>({
     {
       type: "email",
       required: true,
-      message: "邮箱格式不正确",
+      message: "The email format is incorrect",
       trigger: "blur",
     },
   ],
   password: [
-    { required: true, message: "密码不能为空", trigger: "blur" },
-    { min: 6, max: 30, message: "长度在6到30个字符之间", trigger: "blur" },
+    { required: true, message: "Password cannot be empty", trigger: "blur" },
+    { min: 6, max: 30, message: "Password length between 6 and 30 characters", trigger: "blur" },
   ],
 });
 
@@ -94,11 +94,11 @@ const handleSubmit = (formEl: FormInstance | undefined) => {
 
         // @ts-ignore
         ElMessage({
-          message: "用户登录成功.",
+          message: "Login Success.",
           type: "success",
         });
 
-        router.push("/");
+        router.push("/MyResume");
       }
     } else {
       console.log("error submit!");

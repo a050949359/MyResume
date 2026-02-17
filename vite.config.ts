@@ -1,3 +1,4 @@
+import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -16,12 +17,18 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
   ],
-
+  
   server: {
     host: '0.0.0.0',
     port: 5173,
     proxy: {
-      "api":"https://192.168.0.105"
+      "api":"https://192.168.1.141"
     }
   },
+
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  }
 })

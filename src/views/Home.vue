@@ -1,11 +1,14 @@
 <template>
-  <div class="home">
+  <el-container class="home">
     <Navbar />
-    <Sidebar />
-    <div class="container-right">
-      <router-view></router-view>
-    </div>
-  </div>
+    <el-container class="container">
+      
+      <Sidebar />
+      <el-main>
+        <router-view></router-view>
+      </el-main>
+    </el-container>
+  </el-container>
 </template>
 
 <script setup lang="ts">
@@ -29,13 +32,12 @@ onMounted(async () => {
   overflow: hidden;
 }
 
-.container-right {
-  position: relative;
-  top: 60px;
-  bottom: 0px;
-  left: 180px;
-  width: calc(100% - 180px);
+.container {
+  padding-top: 60px;
   height: 100%;
-  
+}
+
+.container .el-main {
+  padding: 0;
 }
 </style>

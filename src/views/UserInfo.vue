@@ -1,9 +1,7 @@
 <template>
-  
-    <div class="container">
-
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+  <el-scrollbar>
+    <div class="userinfo-container">
+        <!-- <div class="col-md-10 col-md-offset-1"> -->
           <div class="title text-center">
             <h1>ohya(當前進度 git actions 完成, 下一步增加個人project)</h1>
             <!-- Will put my linkedin profile URL if needed-->
@@ -54,10 +52,13 @@
               <li>華岡興業基金會x NTC.im人 大數據課程</li>
             </ul>
           </div>
+           <div class="footer">
+
+          </div>
         </div>
-      </div>
-    </div>
-  
+     
+    
+  </el-scrollbar>
 </template>
 
 <script setup lang="ts">
@@ -65,10 +66,10 @@
 
 <style scoped>
 @import "devicon/devicon.min.css";
-.container {
+.userinfo-container {
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
+  
  
   text-align: center;
   color: #A1A69C;
@@ -101,7 +102,7 @@ body {
 
 .title {
   font-size: 32px;
-  margin-top: 40px;
+  padding-top: 40px;
   margin-bottom: 10px;
 }
 
@@ -147,19 +148,6 @@ div .summary, div .work-experience, div .learning-experience {
   padding-bottom: 10px;
 }
 
-.container {
-  text-align: center;
-  width: 100%;
-  margin: 0 auto;
-
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .col-md-3 {
   padding: 5px;
   text-align: center;
@@ -178,4 +166,7 @@ h2 {
   text-align: center;
 }
 
+.footer {
+  height: 60px;
+}
 </style>

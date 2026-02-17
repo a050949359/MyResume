@@ -1,15 +1,14 @@
 <template>
   <!-- 侧边栏 -->
-  <el-row class="menu-container">
-    <el-col :span="12">
-      <el-menu active-text-color="#ffd04b" background-color="#3B4E59" class="el-menu-vertical" default-active="1"
+  <el-aside :width="asideWidth" class="menu-container">
+      <el-menu :collapse="isCollapse" active-text-color="#ffd04b" background-color="#3B4E59" class="el-menu-vertical" default-active="1"
         text-color="#BACBD9">
         <router-link to="/MyResume">
           <el-menu-item index="1">
             <el-icon>
               <HomeFilled />
             </el-icon>
-            <span>首页</span>
+            <template #title><span>首页</span></template>
           </el-menu-item>
         </router-link>
         <template v-for="menu in menus" :key="menu.path">
@@ -18,7 +17,7 @@
               <el-icon>
                 <component :is="menu.icon"></component>
               </el-icon>
-              <span>{{ menu.name }}</span>
+             <span>{{ menu.name }}</span>
             </template>
             <el-menu-item-group>
               <router-link v-for="(item, index) in menu.children" :key="index" :to="item.path">
@@ -32,17 +31,32 @@
             <el-icon>
               <InfoFilled />
             </el-icon>
-            <span>個人資訊</span>
+            <template #title><span >個人資訊</span></template>
           </el-menu-item>
         </router-link>
         
       </el-menu>
-    </el-col>
-  </el-row>
+  </el-aside>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+
+const isCollapse = ref(false)
+const asideWidth = ref('180px')
+const handleResize = () => {
+  isCollapse.value = window.innerWidth < 768;
+  asideWidth.value = window.innerWidth < 768  ? '64px' : '180px'
+}
+
+onMounted(() => {
+  handleResize()
+  window.addEventListener('resize', handleResize)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', handleResize)
+})
 
 const menus = ref([
   {
@@ -63,13 +77,7 @@ const menus = ref([
 
 <style scoped>
 .menu-container {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  min-height: 100%;
-  
   background-color: #3B4E59;
-  z-index: 99;
 }
 
 .el-menu {
@@ -83,11 +91,7 @@ const menus = ref([
 
 .el-menu-vertical:not(.el-menu--collapse) {
   width: 180px;
-  min-height: 100vh;
-}
-
-.el-menu-vertical {
-  width: 35px;
+  min-height: 100%;
 }
 
 .el-sub-menu .el-menu-item {
@@ -102,5 +106,12 @@ const menus = ref([
 
 a {
   text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .menu-container {
+    font-size: 14px;
+    
+  }
 }
 </style>

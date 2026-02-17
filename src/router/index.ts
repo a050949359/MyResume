@@ -9,18 +9,21 @@ const routes: Array<RouteRecordRaw> = [
             {path: "",component: () => import("../views/Index.vue")},
             {path: "userinfo",component: () => import("../views/UserInfo.vue")},
             {path: "fundList",component: () => import("../views/FundList.vue")},
+            {path: "register",component: () => import("../views/Register.vue")},
+            {path: "login",component: () => import("../views/Login.vue")},
+            
         ]
     },
-    {
-        path: "/register",
-        name: "Register",
-        component: () => import("../views/Register.vue")
-    },
-    {
-        path: "/login",
-        name: "Login",
-        component: () => import("../views/Login.vue")
-    },
+    // {
+    //     path: "/register",
+    //     name: "Register",
+    //     component: () => import("../views/Register.vue")
+    // },
+    // {
+    //     path: "/login",
+    //     name: "Login",
+    //     component: () => import("../views/Login.vue")
+    // },
     {
         path: "/:catchAll(.*)",
         name: "404",
